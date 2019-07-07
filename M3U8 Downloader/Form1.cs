@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Xml;
 using System.Text;
-using Microsoft.WindowsAPICodePack.Taskbar;
+//using Microsoft.WindowsAPICodePack.Taskbar;
 using System.Threading;
 
 namespace M3U8_Downloader
@@ -16,7 +16,7 @@ namespace M3U8_Downloader
     public partial class Form1 : Form
     {
         //任务栏进度条的实现。
-        private TaskbarManager windowsTaskbar = TaskbarManager.Instance;
+        //private TaskbarManager windowsTaskbar = TaskbarManager.Instance;
         
         //拖动窗口
         [DllImport("user32.dll")]
@@ -212,7 +212,7 @@ namespace M3U8_Downloader
                         Progress = 0;
 
                     ProgressBar.Value = Convert.ToInt32(Progress);
-                    windowsTaskbar.SetProgressValue(Convert.ToInt32(Progress), 100, this.Handle);
+                    //windowsTaskbar.SetProgressValue(Convert.ToInt32(Progress), 100, this.Handle);
                     label_Progress.Visible = true;
                     label_Progress.Text = "已完成：" + String.Format("{0:F}", Progress) + "%";
                     this.Text = "已完成：" + String.Format("{0:F}", Progress) + "%" + " [" + FormatFileSize((big - small) * 1024) + "/s]";
@@ -232,7 +232,7 @@ namespace M3U8_Downloader
                             Progress = 0;
 
                         ProgressBar.Value = Convert.ToInt32(Progress);
-                        windowsTaskbar.SetProgressValue(Convert.ToInt32(Progress), 100, this.Handle);
+                        //windowsTaskbar.SetProgressValue(Convert.ToInt32(Progress), 100, this.Handle);
                         label_Progress.Visible = true;
                         label_Progress.Text = "已完成：" + String.Format("{0:F}", Progress) + "%";
                         this.Text = "已完成：" + String.Format("{0:F}", Progress) + "%" + " [" + FormatFileSize((big - small) * 1024) + "/s]";
@@ -246,8 +246,8 @@ namespace M3U8_Downloader
         private void Form1_Load(object sender, EventArgs e)
         {
             ////初始化进度条
-            windowsTaskbar.SetProgressState(TaskbarProgressBarState.Normal, this.Handle);
-            windowsTaskbar.SetProgressValue(0, 100, this.Handle);
+            //windowsTaskbar.SetProgressState(TaskbarProgressBarState.Normal, this.Handle);
+            //windowsTaskbar.SetProgressValue(0, 100, this.Handle);
 
             if (!File.Exists(@"Tools\ffmpeg.exe"))  //判断程序目录有无ffmpeg.exe
             {
@@ -656,7 +656,7 @@ namespace M3U8_Downloader
             FlashWindow(this.Handle, true);
 
             //设置任务栏进度条状态
-            windowsTaskbar.SetProgressState(TaskbarProgressBarState.NoProgress, this.Handle);
+            //windowsTaskbar.SetProgressState(TaskbarProgressBarState.NoProgress, this.Handle);
             this.Text = "M3U8 Downloader";
             this.label_Progress.Text = "已完成：" + "100.00%";
             ProgressBar.Value = 100;
