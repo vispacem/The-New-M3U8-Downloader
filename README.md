@@ -1,3 +1,8 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/vcir0rgr11d8l52b?svg=true)](https://ci.appveyor.com/project/vispacem/the-new-m3u8-downloader)
+
+I got rid of all taskbar stuff. Sorry is very cool but I don't like it.
+
+
 # The-New-M3U8-Downloader
 Rebulid of M3U8-Downloader.  
 
@@ -10,6 +15,4 @@ Rebulid of M3U8-Downloader.
 * 解除程序多开限制  
 * 优化结束任务逻辑  
 
-![1.0](http://i1.piimg.com/567571/6e7c4ee133502375.png)
 
-![1.0](http://i1.piimg.com/567571/5f60deb57631486f.png)
