@@ -7,7 +7,7 @@ install:
   appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 after_build:
-  - 7z a M3U8-Downloader.zip %APPVEYOR_BUILD_FOLDER%\M3U8-Downloader\bin\Debug\*.*
+  - 7z a M3U8-Downloader.zip "%APPVEYOR_BUILD_FOLDER%\M3U8 Downloader\bin\Debug\*.*"
 
 artifacts:  # Archive the generated packages in the ci.appveyor.com build report.  - path: bin\Debug\*
   - path: M3U8-Downloader.zip
